@@ -45,7 +45,7 @@ body {
 .middle-part {
     display: flex;
     width: 70%;
-    height: 20em;
+    height: 10em;
     margin: auto;
 }
 
@@ -62,12 +62,12 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: 40%;
     margin: auto;
 }
 
 .answer {
-    flex: 5 1 15em;
+    flex: 5 1 20em;
     height: 2em;
     margin: 4px 5px;
     border-radius: 5px;

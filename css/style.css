@@ -4,7 +4,7 @@ body {
     display: flex;
     font-family: sans-serif;
     flex-wrap: wrap;
-    font-size: 1.8vw;
+    font-size: 0.8em;
 }
 
 .question {
@@ -14,7 +14,7 @@ body {
     border: 4px solid black;
     border-radius: 1em;
     width: 70%;
-    height: 50%;
+    height: auto;
 }
 
 .upper-part {
@@ -45,13 +45,13 @@ body {
 .middle-part {
     display: flex;
     width: 70%;
-    height: 10em;
+    height: 16em;
     margin: auto;
 }
 
 .question-image {
-    width: auto;
-    height: auto;
+    width: 80%;
+    height: 70%;
     margin: 10px auto;
     border: 4px solid black;
     border-radius: 2em;
@@ -62,7 +62,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 40%;
+    width: 70%;
     margin: auto;
 }
 

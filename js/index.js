@@ -42,8 +42,10 @@ function changeButtonColor(question, answer, correct) {
     }
     else {
         button.style.backgroundColor = "red";
-        message.className = "message-wrong";
-        message.innerHTML = "Ouch, close one";
+        message.className = "message-correct";
+        message.innerHTML = correctMessages[question-1];
+        button = document.getElementById("q"+question+"-"+answers[question-1])
+        button.style.backgroundColor = "green";
     }
     message.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 

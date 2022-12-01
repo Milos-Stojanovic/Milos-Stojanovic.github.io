@@ -20,7 +20,7 @@ function checkAnswer(question, answer) {
     if (answered.includes(question, 0)) return; /* question already answered */
     if (answer == answers[question-1]) {
         /* dodaj poene */
-
+        score += 1;
         /* promena boje dugmeta */
         changeButtonColor(question, answer, true)
     }
@@ -29,6 +29,18 @@ function checkAnswer(question, answer) {
         changeButtonColor(question, answer, false)
     }
     answered.push(question)
+
+    /* proveri da li je dat odgovor na sva pitanja, ako jeste ispisi rezultat na dnu */
+    if (answered.length == 10) {
+        document.getElementById("lds-default").style.display = "block";
+        document.getElementById("footer-placeholder1").scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+        setTimeout(function() {
+            //alert(score);
+            document.getElementById("lds-default").style.display = "none";
+            document.getElementById("final-score").style.display = "block";
+            document.getElementById("final-score").innerHTML = "Your final score is: " + score + "/10";
+        }, 2000);
+    }
 }
 
 function changeButtonColor(question, answer, correct) {
@@ -47,7 +59,9 @@ function changeButtonColor(question, answer, correct) {
         button = document.getElementById("q"+question+"-"+answers[question-1])
         button.style.backgroundColor = "green";
     }
+    
     message.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+    
 
     /* change colors of other buttons */
     for (let i = 1; i < 5; i++) {
@@ -56,6 +70,7 @@ function changeButtonColor(question, answer, correct) {
         button.className = "answered"
     }
 }
+
 
 /*wrapper.addEventListener('click', (event) => {
     const isButton = event.target.nodeName === 'BUTTON';

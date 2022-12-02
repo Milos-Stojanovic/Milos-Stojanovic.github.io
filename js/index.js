@@ -3,6 +3,9 @@ let answered = [];
 let correctMessages = [];
 let score = 0
 
+/* page elements */
+let loadingBar = document.getElementById("lds-default")
+
 
 /* forming messages for correct answers */
 correctMessages.push("Kareem Abdul-Jabbar won the award a record six times. Both Bill Russell and Michael Jordan won the award five times, while Wilt Chamberlain won the award four times.")
@@ -32,13 +35,13 @@ function checkAnswer(question, answer) {
 
     /* proveri da li je dat odgovor na sva pitanja, ako jeste ispisi rezultat na dnu */
     if (answered.length == 10) {
-        document.getElementById("lds-default").style.display = "block";
+        loadingBar.style.display = "block";
         document.getElementById("footer-placeholder1").scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
         setTimeout(function() {
             //alert(score);
-            document.getElementById("lds-default").style.display = "none";
+            loadingBar.style.display = "none";
             document.getElementById("final-score").style.display = "block";
-            document.getElementById("final-score").innerHTML = "Your final score is: " + score + "/10";
+            document.getElementById("final-score").innerHTML = "Your final score is: </br> " + score + "/10";
         }, 2000);
     }
 }
